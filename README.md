@@ -51,11 +51,13 @@ This project integrates advanced image processing, local feature descriptors, an
   - **Perceptual Loss (LPIPS):** Preserves perceptual image quality.  
   - **Descriptor-Based Loss:** Reduces ORB and SIFT keypoint matching to disrupt AI feature recognition.  
 
-- **Total Loss:**  
-  \[
-  \text{Total Loss} = \text{Feature Loss} + (\text{LPIPS Loss - } p) + \text{ORB Loss} + \text{SIFT Loss}
-  \]  
-  where \( p \) is a perceptual similarity threshold, ensuring minimal visual differences.  
+- **Total Loss Formula**:
+
+Total Loss = Feature Loss + (LPIPS Loss - p) + ORB Loss + SIFT Loss
+
+where:  
+p: Perturbation budget to ensure minimal perceptual difference.
+
 
 ### Classification  
 

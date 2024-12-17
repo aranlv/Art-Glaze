@@ -53,13 +53,16 @@ This project integrates advanced image processing, local feature descriptors, an
 
 - **Total Loss Formula**:
 
-Total Loss = Feature Loss + (LPIPS Loss - p) + ORB Loss + SIFT Loss
+Total Loss = α *Feature Loss* + α*(LPIPS Loss − p)* + β<sub>ORB</sub> · ORB *Matches* + β<sub>SIFT</sub> · SIFT *Matches*
 
-where:  
-p: Perturbation budget to ensure minimal perceptual difference.
+Where:  
+- **p**: Perturbation budget to ensure minimal perceptual difference.  
+- **α**: Weight factor for *Feature Loss* and *LPIPS Loss*.  
+- **β<sub>ORB</sub>**: Weight factor for ORB *Loss*.  
+- **β<sub>SIFT</sub>**: Weight factor for SIFT *Loss*.  
 
 
-### Classification  
+### Classification 
 
 A Support Vector Machine (SVM) is used to classify glazed and unglazed images based on extracted features:  
 - **Color Histogram**  
